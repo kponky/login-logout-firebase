@@ -1,16 +1,21 @@
-import React from 'react';
+import React from 'react'
 import './FormInputs.scss'
 
 const FormInputs = (props) => {
 
-    const {onChange, id,  ...inputProps} = props;
-
+  const {onChange, id, ...inputProps } = props;
   return (
-    <div className='formInput'>
-      <input {...inputProps} onChange={onChange} />
-    </div>
+  
+    <div className='formInputs'>
     
-  )
-}
+    <input  {...inputProps} onChange={onChange}/>
+
+
+    </div>
+  );
+};
 
 export default FormInputs
+    // <input placeholder={props.placeholder} /> initial values
+   // <input{...inputProps} onChange={onChange} />
+  //  <input placeholder={props.placeholder} /> initial values
