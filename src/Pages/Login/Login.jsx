@@ -1,9 +1,32 @@
- import React from 'react'
+ import React, { useState } from 'react'
  import './Login.scss'
 import { Link } from 'react-router-dom'
-import { FacebookRounded } from '@mui/icons-material'
+import { FacebookRounded, Visibility, VisibilityOff } from '@mui/icons-material'
  
  const Login = () => {
+
+const [inputs, setInputs] = useState ({
+  email: "",
+  password: "",
+});
+
+const [toggleEye, setToggleEye] = useState(false);
+
+const[inputType, setInputType] = useState('password')
+
+const handleToggle = (e) =>{
+setToggleEye(!toggleEye);
+setInputType(inputType === "password" ? "text" : "password" )
+}
+
+const handleChange = (e) =>{
+  setInputs((prev) =>({...prev, [e.target.name]:e.target.value}))
+};
+
+console.log(inputs)
+
+
+
    return (
      <div className='login'>
      <form>
@@ -11,15 +34,28 @@ import { FacebookRounded } from '@mui/icons-material'
      <h2>Login</h2>
 
      <div className='formInputs'>
-     <input type='email' name='email' id='email' placeholder='Email' required/>
+     <input type='email' name='email' id='email' placeholder='Email' required 
+     onChange={handleChange}/>
+     </div>
+
+
+     <div className='formInputs'>
+     <input type= {inputType} 
+     name='password' 
+     id='password'
+      placeholder='Password' 
+      required 
+      onChange = {handleChange}/>
+
+     <div className='eyeIcon' onClick={handleToggle}> {toggleEye ? <Visibility/> : <VisibilityOff/>}</div>
      </div>
  
     
-     <button type='submit'>Signup</button>
+     <button type='submit'>Login</button>
      <div className='formLink'>
-     <span>Already have an account? </span>
-     <Link to ="/login" className='formSignup'>
-     {" "} Sign In</Link>
+     <span>Don't have an account? </span>
+     <Link to ="/register" className='formSignup'>
+     {" "} SignUp</Link>
      </div>
      
      <div className='line'></div>

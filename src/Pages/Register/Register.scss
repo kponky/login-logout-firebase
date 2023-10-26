@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #409498;
+    background-color: #eaf5f5c2;
     width: 100%;
 
 
@@ -14,6 +14,10 @@ form{
     padding: 20px;
     width: 100%;
     border-radius: 5px;
+    box-shadow: -7px 7px 5px 5px rgba(206, 199, 199, 0.985);
+-webkit-box-shadow: -7px 7px 5px 5px rgba(86, 81, 81, 0.66);
+-moz-box-shadow: -7px 7px 5px 5px rgba(240, 230, 230, 0.66);
+ 
  
 h2{
     font-size: 20px;
