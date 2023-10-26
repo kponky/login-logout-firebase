@@ -18,25 +18,36 @@ const Register = () => {
       id: 1,
       name: "username",
       type: "text",
-      placeholder: "Username"
+      placeholder: "Username", 
+      errorMessage:  "Username should be 3-16 character long",
+      pattern: "^[A-Za-z0-9?=.*]{3, 16}$",
+      required: true,
+
     },
     {
       id: 2,
       name: "email",
       type: "email",
-      placeholder: "Email"
+      placeholder: "Email",
+      errorMessage: "Input a valid email",
+      required: true,
     },
     {
       id: 3,
       name: "password",
-      type: "password",
-      placeholder: "Password"
+      type: "text",
+      placeholder: "Password",
+      errorMessage:"Password should be atleast 8 characters", 
+      patttern: `(?=.*[a-z])(?=.*[A-Z])(?=.[0-9])(?=.*[!@#$%*&*()_+])[A-Za-z0-9!@#$%^*()_+]{8,20}$`,      required: true,
     },
     {
       id: 4,
       name: "confirmpassword",
-      type: "password",
-      placeholder: "Confirm Password"
+      type: "text",
+      placeholder: "Confirm Password",
+      errorMessage:"Pasword don't match",
+      pattern: inputValues.password, 
+      required: true,
     },
  ] ;
 
@@ -47,6 +58,7 @@ const Register = () => {
  console.log(inputValues)
   return (
     <div className='register'>
+   
     <form>
 
     <h2>Sign Up</h2>
@@ -69,7 +81,7 @@ const Register = () => {
     <div className='line'></div>
 
     <div className='medOption'></div>
-    <Link to="https://web.facebook.com/login/?_rdc=1&_rdr" className='facebook'>
+    <Link to="https://web.facebook.com/login/?_rdc=1&_rdr" target='_blank' className='facebook'>
     <FacebookRounded className='facebookIcon'/>
     <span>Login with Facebook</span>
     </Link>

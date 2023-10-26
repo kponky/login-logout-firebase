@@ -11,36 +11,46 @@ input{
       outline: none;
       font-size: 17px;
       font-weight: 500;
-}
+      border-radius: 5px;
 
-}
-
-
-
-  
-
-// //       &:focus {
-// //         border-bottom-width: 2px;
-// //       }
+      &:focus {
+        border-bottom-width: 3px;
+      }
+      &:invalid[focused = "true" ]{
+        border: 1px solid red;
+      }
+      &:invalid[focused = "true" ] ~ .errorMessage{
+        display: block;
+         
+      }
       
+} //closing tag for input
+
+.errorMessage{
+    color: red;
+    font-size: 13px !important;
+    font-weight: bold;
+    display: none;
+    
+}
+
+
+} //ccloding tag for formInputs 
+
+
+
+   
+
+   
 // //       &:invalid [focused = "true"] {
 // //         border: 2px solid red;
 // //       }
   
-// //     //   &:invalid [focused = 'true'] ~ .errorMessage {
-// //     //   display: block;
-// //     //   }
+   
    
     
 // //     } 
-// //     .errorMessage{
-// //         color: red;
-// //         font-size: 13px !important;
-// //         font-weight: bold;
-// //         display: none;
-        
-//   }
-  
+    
 //    }
    
     
